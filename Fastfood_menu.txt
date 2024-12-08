@@ -1,0 +1,25 @@
+1.Grilled Chicken Burger.290.1
+2.Zinger Burger.300.2
+3.Jalapeno Burger.250.3
+4.Patti Burger.250.4
+5.Alfredo Pasta.360.5
+6.Red Square Pasta.400.6
+7.Crispy Chicken Noodles.320.7
+8.Lasagne.450.8
+9.Club Sandwich.300.9
+10.Pizza Sandwich.500.1
+11.Grilled Cheese Sandwich.380.2
+12.BBQ Sandwich.320.3
+13.Tikka Pizza.1000.4
+14.Tandori Pizza.1100.5
+15.Fajita Pizza.1150.6
+16.BBQ Pizza.1050.7
+17.Beef Burger.340.8
+18.Beef Tikka Burger.400.9
+19.Beef Stained Noodles.440.1
+20.Beef Sandwich.400.2
+21.Beef Pizza.1500.3
+22.French Fries.250.4
+23.Nuggets.200.5
+24.Samosa.60.6
+25.Chicken Bites.270.7
