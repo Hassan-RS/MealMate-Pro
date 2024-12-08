@@ -5,8 +5,9 @@
 
 using namespace std;
 
-int main() {
-    int response;
+int main()
+{
+
     string name, filename;
     string last4digits;
     long long int ph_number;
@@ -30,20 +31,25 @@ int main() {
     // Attempt to open the file in read mode
     file.open(filename, ios::in);
 
-    if (file.is_open()) {
+    if (file.is_open())
+    {
         cout << "File found. Reading content:\n";
         string line;
 
         // Read and display the file's contents
-        while (getline(file, line)) {
+        while (getline(file, line))
+        {
             cout << line << "\n";
         }
         file.close();
-    } else {
+    }
+    else
+    {
         // File does not exist; create a new file
         file.open(filename, ios::out); // Open in write mode
 
-        if (file.is_open()) {
+        if (file.is_open())
+        {
             cout << "File not found. Creating a new file: " << filename << "\n";
             cout << "Enter some content to save in the file: ";
             cin.ignore(); // To clear the input buffer
@@ -52,7 +58,9 @@ int main() {
             file << content << "\n";
             file.close();
             cout << "File created and content saved.\n";
-        } else {
+        }
+        else
+        {
             cerr << "Error creating the file.\n";
         }
     }
