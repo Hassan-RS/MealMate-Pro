@@ -6,7 +6,9 @@ using namespace std;
 
 int main()
 {
-    ifstream File("Fastfood_menu.txt");
+    fstream File;
+    File.open("Fastfood_menu.txt", ios::in | ios ::out | ios::app);
+
     if (!File)
     {
         cerr << "Error opening file!" << endl;
