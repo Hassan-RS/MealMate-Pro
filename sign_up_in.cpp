@@ -77,7 +77,7 @@ int main()
 
         if(!File)
         {
-            cerr << "Error opening file!" << endl;
+            cout << "Error opening file!" << endl;
             return 1;
         }
 
@@ -122,7 +122,7 @@ int main()
 
         if(!File)
         {
-            cerr << "Error opening file!" << endl;
+            cout << "Error opening file!" << endl;
             return 1;
         }
 
