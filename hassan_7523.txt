@@ -1,0 +1,3 @@
+Food Name: Chicken Pulao
+Price: Rs 200
+Calories: 1
