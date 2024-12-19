@@ -180,11 +180,7 @@ int main()
             cout<<"Do you want to order anything else? (y/n)"<<endl;
             cin>>response;
 
-            switch(response)
-            {
-                
-            }
-
+            
         }while(response !='n'|| response !='N')
         
     }
