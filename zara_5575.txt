@@ -66,3 +66,7 @@ Calories: 7
 Food Name: Fish Karahi
 Price: Rs 400
 Calories: 8
+
+Food Name: Grilled Chicken Burger
+Price: Rs 290
+Calories: 1
