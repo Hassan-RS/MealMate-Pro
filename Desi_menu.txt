@@ -1,50 +1,50 @@
-1.Chicken Pulao.200.1
-2.Chicken Kabli Pulao.250.2
-3.Chicken Biryani.220.3
-4.Tikka Biryani.280.4
-5.Qeema Biryani.300.5
-6.Mutton Pulao.320.6
-7.Yakhni Pulao.330.7
-8.Mutton Biryani.320.8
-9.Fish Biryani.350.9
-10.Fried Rice.180.1
-11.Chicken Karahi.240.2
-12.Chicken Achari.270.3
-13.Chicken Handi.260.4
-14.Chicken Jalfarezi.290.5
-15.Chicken Tikka Masala.260.6
-16.Mughlai Chicken.300.7
-17.Chicken Haleem.190.8
-18.Chicken Korma.210.9
-19.Chicken Kofte.250.1
-20.Mutton Karahi.280.2
-21.Mutton Handi.330.3
-22.Mutton Haleem.210.4
-23.Mutton Kofte.280.5
-24.Mutton Korma.240.6
-25.Qeema.300.7
-26.Fish Karahi.400.8
-27.Prawn Karahi.400.9
-28.Chicken Tikka.190.1
-29.Bihari Tikka.230.2
-30.Malai Boti.280.3
-31.Cheese Tikka.300.4
-32.Seekh Kabab.220.5
-33.Chapli Kabab.300.6
-34.Chicken Roast.1000.7
-35.Mutton Tikka.300.8
-36.Mutton Chomps.500.9
-37.Bihari Boti.300.1
-38.Grilled Fish.400.2
-39.Grilled Prawns.600.3
-40.Finger Fish.400.4
-41.BBQ Fish.350.5
-42.Boiled Shrimps.700.6
-43.Mixed Vegetables.150.7
-44.Channay.120.8
-45.Palak Paneer.200.9
-46.Aloo Palak.130.1
-47.Aloo Fry.100.2
-48.Bhindi.100.3
-49.Daal Maash.110.4
-50.Daal Fry.140.5
+1.Chicken Pulao.200.450
+2.Chicken Kabli Pulao.250.500
+3.Chicken Biryani.220.600
+4.Tikka Biryani.280.650
+5.Qeema Biryani.300.700
+6.Mutton Pulao.320.750
+7.Yakhni Pulao.330.760
+8.Mutton Biryani.320.800
+9.Fish Biryani.350.600
+10.Fried Rice.180.400
+11.Chicken Karahi.240.650
+12.Chicken Achari.270.550
+13.Chicken Handi.260.600
+14.Chicken Jalfarezi.290.500
+15.Chicken Tikka Masala.260.550
+16.Mughlai Chicken.300.700
+17.Chicken Haleem.190.400
+18.Chicken Korma.210.550
+19.Chicken Kofte.250.600
+20.Mutton Karahi.280.750
+21.Mutton Handi.330.800
+22.Mutton Haleem.210.450
+23.Mutton Kofte.280.650
+24.Mutton Korma.240.700
+25.Qeema.300.650
+26.Fish Karahi.400.700
+27.Prawn Karahi.400.750
+28.Chicken Tikka.190.450
+29.Bihari Tikka.230.500
+30.Malai Boti.280.550
+31.Cheese Tikka.300.600
+32.Seekh Kabab.220.500
+33.Chapli Kabab.300.600
+34.Chicken Roast.1000.900
+35.Mutton Tikka.300.700
+36.Mutton Chomps.500.800
+37.Bihari Boti.300.650
+38.Grilled Fish.400.600
+39.Grilled Prawns.600.800
+40.Finger Fish.400.550
+41.BBQ Fish.350.650
+42.Boiled Shrimps.700.800
+43.Mixed Vegetables.150.300
+44.Channay.120.250
+45.Palak Paneer.200.350
+46.Aloo Palak.130.250
+47.Aloo Fry.100.200
+48.Bhindi.100.200
+49.Daal Maash.110.250
+50.Daal Fry.140.300
