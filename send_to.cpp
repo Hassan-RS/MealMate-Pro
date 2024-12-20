@@ -16,7 +16,6 @@ int main()
     string foodNames[MAX_ITEMS];
     double prices[MAX_ITEMS];
     int calories[MAX_ITEMS];
-    int count = 1;
     int choice;
     char response;
 
@@ -37,8 +36,8 @@ int main()
     fstream ufile;
 
     // Attempt to open the file in read mode
-    ufile.open(filename, ios::in);
-
+    ufile.open(filename, ios::in | ios::out | ios::app);
+    ufile.seekg(0);
     if (ufile.is_open())
     {
         cout << "File found. Reading content:\n";
@@ -49,7 +48,6 @@ int main()
         {
             cout << line << "\n";
         }
-        ufile.close();
     }
     else
     {
@@ -59,7 +57,6 @@ int main()
         if (ufile.is_open())
         {
             cout << "File not found. Creating a new file: " << filename << "\n";
-            ufile.close();
         }
         else
         {
@@ -67,16 +64,20 @@ int main()
         }
     }
 
+    ufile.clear();
+
     back:
     int type;
-    cout<<"Do you want to eat desi(1) or fastfood(2): "<<endl;
+    cout<<"Do you want to eat desi(1) or fastfood(2): \n(3) to exit the program."<<endl;
     cin>>type;
+
+    int count = 1;
 
     fstream File;
 
     if(type==2)
     {
-        File.open("Fastfood_menu.txt", ios::in | ios ::out | ios::app);
+        File.open("Fastfood_menu.txt", ios::in);
 
         if(!File)
         {
@@ -115,7 +116,7 @@ int main()
     }
     else if(type==1)
     {
-        File.open("Desi_menu.txt", ios::in | ios ::out | ios::app);
+        File.open("Desi_menu.txt", ios::in);
 
         if(!File)
         {
@@ -152,6 +153,10 @@ int main()
                  << ", Calories: " << calories[i] << endl;
         }
     }
+    else if(type==3)
+    {
+        return 0;
+    }
     else
     {
         cout<<"Invalid input"<<endl;
@@ -170,19 +175,27 @@ int main()
 
     if(response=='y' || response=='Y')
     {
-       ufile.open(filename, ios::out);
        ufile<<"\nFood Name: " << foodNames[choice]
             << "\nPrice: Rs " << prices[choice]
             << "\nCalories: " << calories[choice] << endl;
 
-        do
-        {
+            response:
             cout<<"Do you want to order anything else? (y/n)"<<endl;
             cin>>response;
 
+            if(response=='y' || response=='Y')
+            {
+                goto back;
+            }
+            else if(response=='n' || response=='N')
+            {
             
-        }while(response !='n'|| response !='N');
-        
+            }
+            else
+            {
+                cout<<"Invalid input! "<<endl;
+                goto response;
+            }
     }
     else if(response=='n' || response=='N')
     {
@@ -193,7 +206,8 @@ int main()
         cout<<"Invalid input! "<<endl;
         goto choice;
     }
-        
+
+    ufile.close(); 
 
     return 0;
 }
