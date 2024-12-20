@@ -162,7 +162,7 @@ int main()
         cout<<"Invalid input"<<endl;
     }
 
-    cout<<"What do you want to eat (Input ID): "<<endl;
+    cout<<"What do you want to eat (Input ID): "<<endl;     
     cin>>choice;
 
     cout  << "\nFood Name: " << foodNames[choice]

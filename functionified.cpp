@@ -42,12 +42,12 @@ void read_user_file(string filename)
     ufile.close();
 }
 
-void display_menu(int &type)
+void display_menu(int &type,int serialNumbers[], string foodNames[], double prices[], int calories[], int count)
 {
     string menu;
+    fstream File;
 
     choice:
-    int type;
     cout<<"Do you want to eat desi(1) or fastfood(2): \n(3) to exit the program."<<endl;
     cin>>type;
 
@@ -62,20 +62,20 @@ void display_menu(int &type)
         break;
 
         case 3:
+        return;
         break;
 
         default:
-        cout<<"Invalid input! "
+        cout<<"Invalid input! "<<endl;
         goto choice;
     }
 
-    int count=1;
     File.open(menu, ios::in);
 
         if(!File)
         {
             cout << "Error opening file!" << endl;
-            return 1;
+            return ;
         }
 
         string line;
@@ -98,6 +98,81 @@ void display_menu(int &type)
         }
 
         File.close();
+
+        for (int i = 1; i < count; i++)
+        {
+            cout << "ID: " << serialNumbers[i]
+                 << ", Food Name: " << foodNames[i]
+                 << ", Price: Rs " << prices[i]
+                 << ", Calories: " << calories[i] << endl;
+        }
+}
+
+void place_order(string foodNames[], double prices[], int calories[], int &type, string filename, int &count)
+{
+    fstream ufile;
+
+    ufile.open(filename, ios::app);
+
+    int choice;
+
+    ID:
+    cout<<"What do you want to eat (Input ID): "<<endl;     
+    cin>>choice;
+    
+    if(choice>count || choice<1)
+    {
+        cout<<"Invalid ID"<<endl;
+        goto ID;
+    }
+    else
+    {
+        cout  << "\nFood Name: " << foodNames[choice]
+                << "\nPrice: Rs " << prices[choice]
+                << "\nCalories: " << calories[choice] << endl;
+
+        choice:
+        char response;
+        cout<<"Do you want to order this: (y/n) "<<endl;
+        cin>>response;
+
+        if(response=='y' || response=='Y')
+        {
+        ufile<<"\nFood Name: " << foodNames[choice]
+                << "\nPrice: Rs " << prices[choice]
+                << "\nCalories: " << calories[choice] << endl;
+
+                response:
+                cout<<"Do you want to order anything else? (y/n)"<<endl;
+                cin>>response;
+
+                if(response=='y' || response=='Y')
+                {
+                    return;
+                }
+                else if(response=='n' || response=='N')
+                {
+                    type=3;
+                }
+                else
+                {
+                    cout<<"Invalid input! "<<endl;
+                    goto response;
+                }
+        }
+        else if(response=='n' || response=='N')
+        {
+            return;
+        }
+        else
+        {
+            cout<<"Invalid input! "<<endl;
+            goto choice;
+        }
+    }
+
+    ufile.close();
+
 }
 
 int main()
@@ -110,8 +185,9 @@ int main()
     string foodNames[MAX_ITEMS];
     double prices[MAX_ITEMS];
     int calories[MAX_ITEMS];
-    int choice;
+    int count;
     char response;
+    int type;
 
     cout << "Welcome to MealMate-Pro" << endl;
     cout << "Enter your name: " << endl;
@@ -131,7 +207,13 @@ int main()
 
     do
     {
-        display_menu(type);  //////to add and start from here
+        count=1;
+        display_menu(type, serialNumbers, foodNames, prices, calories, count);  //////to add and start from here
+        
+        if(type!=3)
+        {
+            place_order(foodNames, prices, calories, type, filename, count);
+        }
     }while(type!=3);
     
 

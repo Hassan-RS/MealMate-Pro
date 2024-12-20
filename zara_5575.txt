@@ -42,3 +42,27 @@ Calories: 9
 Food Name: Tikka Pizza
 Price: Rs 1000
 Calories: 4
+
+Food Name: Mutton Karahi
+Price: Rs 280
+Calories: 2
+
+Food Name: Patti Burger
+Price: Rs 250
+Calories: 4
+
+Food Name: Seekh Kabab
+Price: Rs 220
+Calories: 5
+
+Food Name: Palak Paneer
+Price: Rs 200
+Calories: 9
+
+Food Name: Chicken Bites
+Price: Rs 270
+Calories: 7
+
+Food Name: Fish Karahi
+Price: Rs 400
+Calories: 8
