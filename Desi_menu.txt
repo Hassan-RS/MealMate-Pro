@@ -29,7 +29,7 @@
 29.Bihari Tikka.230.2
 30.Malai Boti.280.3
 31.Cheese Tikka.300.4
-32.Seech Kabab.220.5
+32.Seekh Kabab.220.5
 33.Chapli Kabab.300.6
 34.Chicken Roast.1000.7
 35.Mutton Tikka.300.8
