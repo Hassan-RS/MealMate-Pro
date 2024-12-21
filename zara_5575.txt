@@ -70,3 +70,11 @@ Calories: 8
 Food Name: Grilled Chicken Burger
 Price: Rs 290
 Calories: 1
+
+Food Name: Grilled Chicken Burger
+Price: Rs 290
+Calories: 1
+
+Food Name: Nuggets
+Price: Rs 200
+Calories: 5
