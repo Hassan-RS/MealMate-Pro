@@ -24,8 +24,7 @@ void bubblesort(double arr[], int s)
     bubblesort(arr, s - 1);
 }
 
-void recommendation(int &type, string filename)
-{
+void recommendation(int &type, string filename) {
     string line;
     fstream File;
     int count = 1;
@@ -34,11 +33,13 @@ void recommendation(int &type, string filename)
     double prices[MAX_ITEMS];
     int calories[MAX_ITEMS];
 
+    // Reading Desi_menu.txt
     File.open("Desi_menu.txt", ios::in);
-
-    File.seekg(0);
-    while (getline(File, line) && count < MAX_ITEMS)
-    {
+    if (!File) {
+        cout << "Error: Could not open Desi_menu.txt" << endl;
+        return;
+    }
+    while (getline(File, line) && count < MAX_ITEMS) {
         stringstream ss(line);
         string part1, part2, part3, part4;
         getline(ss, part1, '-');
@@ -52,14 +53,15 @@ void recommendation(int &type, string filename)
         calories[count] = stoi(part4);
         count++;
     }
-
     File.close();
 
+    // Reading Fastfood_menu.txt
     File.open("Fastfood_menu.txt", ios::in);
-
-    File.seekg(0);
-    while (getline(File, line) && count < MAX_ITEMS)
-    {
+    if (!File) {
+        cout << "Error: Could not open Fastfood_menu.txt" << endl;
+        return;
+    }
+    while (getline(File, line) && count < MAX_ITEMS) {
         stringstream ss(line);
         string part1, part2, part3, part4;
         getline(ss, part1, '-');
@@ -73,69 +75,51 @@ void recommendation(int &type, string filename)
         calories[count] = stoi(part4);
         count++;
     }
-
     File.close();
 
-    int a, b, n, randnum;
-    a = 1;
-    b = count;
-    n = b - a; // not using -1 as count is already one aboove the actual number of entries
-
+    // Generate a random recommendation
     srand(time(NULL));
-
-    randnum = a + rand() % n;
+    int randnum = 1 + rand() % (count - 1); // Random number between 1 and count-1
 
     cout << "Here is a recommended dish: " << endl;
-
     cout << "\nFood Name: " << foodNames[randnum]
          << "\nPrice: Rs " << prices[randnum]
          << "\nCalories: " << calories[randnum] << endl;
 
+    // User file handling
     fstream ufile;
-
     ufile.open(filename, ios::app);
-
-    choice:
-    char response;
-    cout << "Do you want to order this: (y/n) " << endl;
-    cin >> response;
-
-    if (response == 'y' || response == 'Y')
-    {
-        ufile << "\nFood Name: " << foodNames[randnum]
-              << "\nPrice: Rs " << prices[randnum]
-              << "\nCalories: " << calories[randnum] << endl;
-
-    response:
-        cout << "Do you want to order anything else? (y/n)" << endl;
-        cin >> response;
-
-        if (response == 'y' || response == 'Y')
-        {
-            return;
-        }
-        else if (response == 'n' || response == 'N')
-        {
-            type = 3;
-        }
-        else
-        {
-            cout << "Invalid input! " << endl;
-            goto response;
-        }
-    }
-    else if (response == 'n' || response == 'N')
-    {
+    if (!ufile) {
+        cout << "Error: Could not open user file " << filename << endl;
         return;
     }
-    else
-    {
-        cout << "Invalid input! " << endl;
-        goto choice;
-    }
+
+    // Local flag to handle user choices
+    char response;
+    char orderMore = 'n';
+
+    do {
+        cout << "Do you want to order this? (y/n): " << endl;
+        cin >> response;
+
+        if (response == 'y' || response == 'Y') {
+            ufile << "\nFood Name: " << foodNames[randnum]
+                  << "\nPrice: Rs " << prices[randnum]
+                  << "\nCalories: " << calories[randnum] << endl;
+
+            cout << "Do you want to order anything else? (y/n): " << endl;
+            cin >> orderMore;
+
+        } else if (response == 'n' || response == 'N') {
+            break;
+        } else {
+            cout << "Invalid input! Please enter y or n." << endl;
+        }
+    } while (orderMore == 'y' || orderMore == 'Y');
 
     ufile.close();
 }
+
 
 void read_user_file(string filename, int &type)
 {
@@ -424,8 +408,7 @@ int main()
     string filename;
     string menu;
     string last4digits;
-    long long int ph_number;
-    const int MAX_ITEMS = 100;
+    long int ph_number;
     int serialNumbers[MAX_ITEMS];
     string foodNames[MAX_ITEMS];
     double prices[MAX_ITEMS];
@@ -445,6 +428,7 @@ int main()
     role:
     cout<<"Do you want to login as admin(1) or user(2)? "<<endl;
     cin>>role;
+    cin.ignore();
     if(role==1)
     {
         cout<<"Enter password: "<<endl;

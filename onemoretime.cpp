@@ -7,7 +7,7 @@ using namespace std;
 
 const int MAX_ITEMS = 100;
 
-void bubblesort(double arr[], int s)
+void bubblesort(int arr[], int s)
 {
     if (s == 1)
         return;
@@ -81,7 +81,7 @@ void recommendation(int &type, string filename)
     b = count;
     n = b - a; // not using -1 as count is already one aboove the actual number of entries
 
-    srand(time(NULL));
+    // srand(time(NULL));
 
     randnum = a + rand() % n;
 
@@ -141,6 +141,7 @@ void read_user_file(string filename, int &type)
 {
     fstream ufile;
     double totalAmount = 0.0;
+    int price;
 
     ufile.open(filename, ios::in);
 
@@ -162,8 +163,7 @@ void read_user_file(string filename, int &type)
         ufile.clear();
         ufile.seekg(0);
 
-        count /= 4;
-        double arr[count];
+        int arr[100];
         // cout << "count = " << count;
         int i = 0;
 
@@ -183,7 +183,7 @@ void read_user_file(string filename, int &type)
                 ss >> temp >> temp >> priceStr;
 
                 // Convert the price string to a double
-                price = stod(priceStr); // Convert string to double
+                price = stoi(priceStr); // Convert string to double
                 arr[i] = price;
 
                 // Update total amount
@@ -444,7 +444,6 @@ int main()
     role:
     cout<<"Do you want to login as admin(1) or user(2)? "<<endl;
     cin>>role;
-    cin.ignore();
     if(role==1)
     {
         cout<<"Enter password: "<<endl;
