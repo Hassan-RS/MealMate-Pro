@@ -1,0 +1,8 @@
+
+Food Name: Chicken Handi
+Price: Rs 260
+Calories: 600
+
+Food Name: Chicken Pulao
+Price: Rs 200
+Calories: 450

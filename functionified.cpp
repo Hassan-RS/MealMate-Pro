@@ -157,7 +157,7 @@ void read_user_file(string filename, int &type)
     recommendation(type, filename);
 }
 
-void display_menu(int &type,int serialNumbers[], string foodNames[], double prices[], int calories[], int count)
+void display_menu(int &type,int serialNumbers[], string foodNames[], double prices[], int calories[], int &count)
 {
     string menu;
     fstream File;

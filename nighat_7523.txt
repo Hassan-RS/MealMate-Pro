@@ -1,0 +1,20 @@
+
+Food Name: BBQ Pizza
+Price: Rs 1050
+Calories: 900
+
+Food Name: Chicken Pulao
+Price: Rs 200
+Calories: 450
+
+Food Name: Grilled Chicken Burger
+Price: Rs 290
+Calories: 450
+
+Food Name: Chicken Haleem
+Price: Rs 190
+Calories: 400
+
+Food Name: Aloo Fry
+Price: Rs 100
+Calories: 200
