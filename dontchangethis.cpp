@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
-
+#include <cctype>
 using namespace std;
 
 const int MAX_ITEMS = 100;
@@ -601,6 +601,10 @@ a_role:
         cin.ignore();
         cout << "Enter your name: " << endl;
         getline(cin, name);
+        for(char &c: name)
+        {
+            c= tolower(c);
+        }
 
         cout << "Enter your phone number: " << endl;
         cin >> ph_number;
