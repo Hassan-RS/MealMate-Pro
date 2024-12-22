@@ -78,3 +78,7 @@ Calories: 1
 Food Name: Nuggets
 Price: Rs 200
 Calories: 5
+
+Food Name: Club Sandwich
+Price: Rs 300
+Calories: 9
