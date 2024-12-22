@@ -1,0 +1,8 @@
+
+Food Name: Mutton Chomps
+Price: Rs 500
+Calories: 9
+
+Food Name: Grilled Chicken Burger
+Price: Rs 290
+Calories: 1
