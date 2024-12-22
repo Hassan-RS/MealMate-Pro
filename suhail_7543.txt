@@ -2,3 +2,7 @@
 Food Name: Mutton Pulao
 Price: Rs 320
 Calories: 6
+
+Food Name: Mutton Kofte
+Price: Rs 280
+Calories: 5
