@@ -683,7 +683,7 @@ a_role:
         if (loyalty_Discount > 0)
         {
             cout << "\nFor being our regular customer, we would like to offer you a loyalty discount of " << loyalty_Discount * 100 << " % Enjoy! :) \n";
-            cout << "\nYour total order value after discount = ";
+            cout << "\nYour total order value after discount = " << current_Order_Val;
         }
         else
         {
