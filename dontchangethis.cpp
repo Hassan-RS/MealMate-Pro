@@ -85,7 +85,7 @@ void recommendation(int &type, string filename, double &current_Order_Cal, doubl
 
     randnum = a + rand() % n;
 
-    cout << "Here is a recommended dish: " << endl;
+    cout << "\nHere is a recommended dish: " << endl;
 
     cout << "\nFood Name: " << foodNames[randnum]
          << "\nPrice: Rs " << prices[randnum]
@@ -97,7 +97,7 @@ void recommendation(int &type, string filename, double &current_Order_Cal, doubl
 
 choice:
     char response;
-    cout << "Do you want to order this: (y/n) " << endl;
+    cout << "\nDo you want to order this: (y/n) " << endl;
     cin >> response;
 
     if (response == 'y' || response == 'Y')
@@ -337,7 +337,7 @@ void place_order(string foodNames[], int prices[], int calories[], int &type, st
     int choice;
 
 ID:
-    cout << "What do you want to eat (Input ID): " << endl;
+    cout << "\nWhat do you want to eat (Input ID): " << endl;
     cin >> choice;
 
     if (choice > count || choice < 1)
