@@ -155,9 +155,17 @@ void read_user_file(string filename, int &type, double &current_Order_Cal, doubl
     double grandTotal = 0.0;  // Total across all sessions
 
     ufile.open(filename, ios::in);
-
+    string line;
     if (ufile.is_open())
     {
+        if (!getline(ufile, line))
+        {
+            cout << "File is empty. No previous orders found.\n";
+            ufile.close();
+            // You can call `recommendation` here if you want to proceed even with an empty file
+            recommendation(type, filename, current_Order_Cal, current_Order_Val, loyalty_Discount);
+            return;
+        }
         cout << "File found. Reading content:\n";
         string line;
 
@@ -601,9 +609,9 @@ a_role:
         cin.ignore();
         cout << "Enter your name: " << endl;
         getline(cin, name);
-        for(char &c: name)
+        for (char &c : name)
         {
-            c= tolower(c);
+            c = tolower(c);
         }
 
         cout << "Enter your phone number: " << endl;
