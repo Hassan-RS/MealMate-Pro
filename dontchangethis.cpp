@@ -598,7 +598,7 @@ a_role:
     }
     if (role == 2)
     {
-
+        cin.ignore();
         cout << "Enter your name: " << endl;
         getline(cin, name);
 
